@@ -63,7 +63,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = message["user"] as? PFUser {
             cell.usernameLabel.text = user.username
         } else {
-            cell.usernameLabel.text = ""
+            cell.usernameLabel.text = "🤖"
         }
         
         return cell
