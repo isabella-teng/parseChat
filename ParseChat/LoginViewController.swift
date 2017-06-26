@@ -33,7 +33,16 @@ class LoginViewController: UIViewController {
         emptyCheck(user: username, pass: password)
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
-                print("User login failed: \(error.localizedDescription)")
+                let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    print("User dismissed error")
+                })
+                
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true) {
+                }
+                
             } else {
                 print("User logged in successfully!")
                //segue to login screen
@@ -67,7 +76,15 @@ class LoginViewController: UIViewController {
         
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
-                print(error.localizedDescription)
+                let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    print("User dismissed error")
+                })
+                
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true) {
+                }
             } else {
                 print("User Registered Successfully!")
                 // segue to logged in view
