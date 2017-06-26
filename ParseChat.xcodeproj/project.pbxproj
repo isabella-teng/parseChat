@@ -10,6 +10,7 @@
 		41AB7EFFA7A141875160D450 /* Pods_ParseChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B47CE9CE2939B769D469D38 /* Pods_ParseChatUITests.framework */; };
 		5EC0946C68B1C9C3E18743DD /* Pods_ParseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D96FEAA812997BA4C149788 /* Pods_ParseChatTests.framework */; };
 		CF229BD4BF445DEDBAB4E8FF /* Pods_ParseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50E2D7F7E0DD1BFA96F63A /* Pods_ParseChat.framework */; };
+		FA56498B1F018C7C00A0B58A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56498A1F018C7C00A0B58A /* LoginViewController.swift */; };
 		FAAFD25D1F0189D3005AE035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD25C1F0189D3005AE035 /* AppDelegate.swift */; };
 		FAAFD25F1F0189D3005AE035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD25E1F0189D3005AE035 /* ViewController.swift */; };
 		FAAFD2621F0189D3005AE035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAFD2601F0189D3005AE035 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		7D96FEAA812997BA4C149788 /* Pods_ParseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2A0E5CC2E33DD597020DBE /* Pods-ParseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		E5B833F0ED762B95E105B27A /* Pods-ParseChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChatTests/Pods-ParseChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA56498A1F018C7C00A0B58A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAAFD2591F0189D3005AE035 /* ParseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAFD25C1F0189D3005AE035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAFD25E1F0189D3005AE035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				FAAFD25C1F0189D3005AE035 /* AppDelegate.swift */,
 				FAAFD25E1F0189D3005AE035 /* ViewController.swift */,
 				FAAFD2601F0189D3005AE035 /* Main.storyboard */,
+				FA56498A1F018C7C00A0B58A /* LoginViewController.swift */,
 				FAAFD2631F0189D3005AE035 /* Assets.xcassets */,
 				FAAFD2651F0189D3005AE035 /* LaunchScreen.storyboard */,
 				FAAFD2681F0189D3005AE035 /* Info.plist */,
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA56498B1F018C7C00A0B58A /* LoginViewController.swift in Sources */,
 				FAAFD25F1F0189D3005AE035 /* ViewController.swift in Sources */,
 				FAAFD25D1F0189D3005AE035 /* AppDelegate.swift in Sources */,
 			);
@@ -700,6 +704,7 @@
 				FAAFD2831F0189D3005AE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAAFD2841F0189D3005AE035 /* Build configuration list for PBXNativeTarget "ParseChatTests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +713,7 @@
 				FAAFD2861F0189D3005AE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAAFD2871F0189D3005AE035 /* Build configuration list for PBXNativeTarget "ParseChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +722,7 @@
 				FAAFD2891F0189D3005AE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
