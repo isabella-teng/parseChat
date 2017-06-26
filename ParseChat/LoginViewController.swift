@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
             } else {
                 print("User logged in successfully!")
                //segue to login screen
+                self.performSegue(withIdentifier: "loginSegue", sender: nil) 
             }
             
         }
@@ -87,7 +88,8 @@ class LoginViewController: UIViewController {
                 }
             } else {
                 print("User Registered Successfully!")
-                // segue to logged in view
+                 //segue to logged in view
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
     }
