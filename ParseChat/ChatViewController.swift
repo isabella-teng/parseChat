@@ -9,13 +9,19 @@
 import UIKit
 import Parse
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var chatMessageField: UITextField!
+    @IBOutlet weak var chatTableView: UITableView!
+    
+    var chatMessages: [PFObject]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        chatTableView.dataSource = self
+        chatTableView.delegate = self
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.refresh), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
 
@@ -26,8 +32,7 @@ class ChatViewController: UIViewController {
     
 
     @IBAction func sendMessage(_ sender: Any) {
-        let chatMessage = PFObject(className: "Message_fbuJuly2017")
-        
+        let chatMessage = PFObject(className: "Message_fbu2017")
         chatMessage["text"] = chatMessageField.text ?? ""
         
         chatMessage.saveInBackground { (success, error) in
@@ -39,6 +44,37 @@ class ChatViewController: UIViewController {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return chatMessages!.count
+        //number of messages, messages.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = chatTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        let message = chatMessages![indexPath.row]
+        cell.chatLabel.text = message["text"] as? String
+        
+        return cell
+        
+    }
+    
+    func refresh() {
+        let query = PFQuery(className: "Message_fbu2017")
+        query.addDescendingOrder("createdAt")
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                self.chatMessages = objects
+                self.chatTableView.reloadData()
+            }
+        }
+        
+    }
+}
+    
     /*
     // MARK: - Navigation
 
@@ -49,4 +85,4 @@ class ChatViewController: UIViewController {
     }
     */
 
-}
+
