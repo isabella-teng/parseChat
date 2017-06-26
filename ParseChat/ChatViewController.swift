@@ -37,6 +37,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func sendMessage(_ sender: Any) {
         let chatMessage = PFObject(className: "Message_fbu2017")
         chatMessage["text"] = chatMessageField.text ?? ""
+        chatMessage["user"] = PFUser.current()
         
         chatMessage.saveInBackground { (success, error) in
             if success {
@@ -59,6 +60,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let message = chatMessages![indexPath.row]
         cell.chatLabel.text = message["text"] as? String
         
+        if let user = message["user"] as? PFUser {
+            cell.usernameLabel.text = user.username
+        } else {
+            cell.usernameLabel.text = ""
+        }
+        
         return cell
         
     }
@@ -66,6 +73,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func refresh() {
         let query = PFQuery(className: "Message_fbu2017")
         query.addDescendingOrder("createdAt")
+        query.includeKey("user")
+        
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)

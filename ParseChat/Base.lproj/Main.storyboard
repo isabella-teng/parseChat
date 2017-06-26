@@ -112,21 +112,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello world" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH2-7p-Qs4">
-                                                    <rect key="frame" x="16" y="16" width="343" height="30.5"/>
+                                                    <rect key="frame" x="8" y="40" width="359" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzx-yG-9yb">
+                                                    <rect key="frame" x="8" y="11" width="79" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bH2-7p-Qs4" secondAttribute="trailing" constant="8" id="3Nx-d2-tji"/>
+                                                <constraint firstItem="bH2-7p-Qs4" firstAttribute="leading" secondItem="ZSf-l0-yKP" secondAttribute="leading" constant="8" id="7Wy-J2-63e"/>
+                                                <constraint firstItem="bH2-7p-Qs4" firstAttribute="top" secondItem="ZSf-l0-yKP" secondAttribute="top" constant="40" id="Daw-Fy-JJS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bH2-7p-Qs4" secondAttribute="trailing" constant="8" id="EId-kR-HLE"/>
                                                 <constraint firstItem="bH2-7p-Qs4" firstAttribute="leading" secondItem="ZSf-l0-yKP" secondAttribute="leadingMargin" constant="8" id="Kir-Cq-mkE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bH2-7p-Qs4" secondAttribute="bottom" constant="8" id="O1k-iE-Y82"/>
-                                                <constraint firstItem="bH2-7p-Qs4" firstAttribute="top" secondItem="ZSf-l0-yKP" secondAttribute="topMargin" constant="8" id="tup-Xc-eft"/>
+                                                <constraint firstAttribute="bottom" secondItem="bH2-7p-Qs4" secondAttribute="bottom" constant="8" id="jVC-lS-nEh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="chatLabel" destination="bH2-7p-Qs4" id="U9P-GL-aUX"/>
+                                            <outlet property="usernameLabel" destination="Jzx-yG-9yb" id="p4D-JH-RdC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
